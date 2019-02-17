@@ -7,6 +7,7 @@ const config = require('config');
 const mongoose = require('mongoose');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
+const cors = require('cors');
 const indexRouter = require('./server/routes/indexRoute');
 
 const graphqlHTTP = require('express-graphql');
@@ -55,6 +56,8 @@ if(cluster.isMaster && config.get('App.isCluster')) {
 	
 	app.set('views', path.join(__dirname, 'views'));
 	app.set('view engine', 'ejs');
+	
+	app.use(cors());
 	
 	// Setup public directory
 	app.use(express.static(path.join(__dirname, 'public')));

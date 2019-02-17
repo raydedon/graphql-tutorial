@@ -8,15 +8,18 @@ import BookList from './BookList';
 
 // apollo client setup
 const client = new ApolloClient({
-	uri: 'http://localhost:4000/graphql'
+	uri: 'http://localhost:3000/graphql'
 });
 
 class App extends Component {
 	render() {
 		return (
+			<ApolloProvider client={client}>
 				<div id="main">
 					<h1>Ninja's Reading List</h1>
+					<BookList />
 				</div>
+			</ApolloProvider>
 		);
 	}
 }

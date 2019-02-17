@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 
-const Book = ({id = '', name = '', genre = '', author: {name: authorName = '', age}, onClickHandler}) => {
+const Book = ({id = '', name = '', genre = '', author: {name: authorName = '', age}}) => {
 	return (
-		<div onClick={onClickHandler(id)}>
+		<div>
 			<h2>{ name }</h2>
 			<p>{ genre }</p>
 			<p>{ authorName }</p>

@@ -13,21 +13,18 @@ class BookList extends Component {
 	}
 	
 	displayBooks() {
-		var {loading, books} = this.props.data;
+		var {loading = false, books = []} = this.props.data;
 		if(loading){
 			return( <div>Loading books...</div> );
 		} else {
-			return <GenericList itemRenderer={Book} list={books} onClick={ (id) => this.setState({ selected: id }) } />
+			return <GenericList itemRenderer={Book} list={books} />
 		}
 	}
 	
 	render() {
 		return(
 			<div>
-				<ul id="book-list">
-					{ this.displayBooks() }
-				</ul>
-				<BookDetails bookId={ this.state.selected } />
+				{ this.displayBooks() }
 			</div>
 		);
 	}

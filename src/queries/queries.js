@@ -4,7 +4,11 @@ const getBooksQuery = gql`
     {
         books {
             name
-            id
+            id,
+            author {
+	            name,
+	            age
+            }
         }
     }
 `;
