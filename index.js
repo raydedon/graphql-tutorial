@@ -73,6 +73,10 @@ if(cluster.isMaster && config.get('App.isCluster')) {
 	app.use('/', indexRouter);
 	app.use('/graphql', graphqlHTTP({
 		schema,
+		graphiql: false
+	}));
+	app.use('/graphiql', graphqlHTTP({
+		schema,
 		graphiql: true
 	}));
 	app.use((req, res) => {

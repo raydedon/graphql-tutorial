@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "apollo-boost": "^0.1.28",
+    "babel-eslint": "^10.0.1",
     "bootstrap": "^4.3.1",
     "clean-webpack-plugin": "^1.0.1",
     "config": "^3.0.1",
@@ -15,7 +16,7 @@
     "ejs": "^2.6.1",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
-    "eslint": "^5.14.0",
+    "eslint": "^5.14.1",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",

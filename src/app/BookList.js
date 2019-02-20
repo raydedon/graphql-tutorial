@@ -1,30 +1,30 @@
 import React, {Component} from 'react';
-import { graphql } from 'react-apollo';
-import { getBooksQuery } from '../queries/queries';
+import {graphql} from 'react-apollo';
+import {getBooksQuery} from '../queries/queries';
 import GenericList from './GenericList';
-import Book from "./Book";
+import Book from './Book';
 
 class BookList extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {};
-		
+
 		this.displayBooks = this.displayBooks.bind(this);
 	}
-	
+
 	displayBooks() {
-		var {loading = false, books = []} = this.props.data;
-		if(loading){
-			return( <div>Loading books...</div> );
+		let {loading = false, books = []} = this.props.data;
+		if(loading) {
+			return (<div>Loading books...</div>);
 		} else {
-			return <GenericList itemRenderer={Book} list={books} />
+			return <GenericList itemRenderer={Book} list={books} />;
 		}
 	}
-	
+
 	render() {
-		return(
+		return (
 			<div>
-				{ this.displayBooks() }
+				{this.displayBooks()}
 			</div>
 		);
 	}
